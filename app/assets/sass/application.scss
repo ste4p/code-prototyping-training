@@ -1,0 +1,137 @@
+// Add extra styles here
+
+// page overrides
+body {
+    background-color: #FDFDFD!important;
+}
+
+.govuk-template {
+    background-color: #28262e!important;
+} 
+
+
+
+
+// header overrides
+
+.govuk-header__container {
+    border-bottom: 10px solid  #7f00ff !important;
+}
+
+.govuk-header {
+    padding: 20px 0px 0px 0px!important;
+    background-color: #28262e;
+}
+
+.govuk-header__logo{
+    background: url(https://www.kinandcarta.com/Assets/Themes/Kincarta/images/logo.svg)!important;
+    background-repeat: no-repeat!important;
+    width: 150px!important;
+    float: right!important;
+
+    margin: 5px 20px 0px 0px !important;
+
+
+}
+
+.govuk-header__content{
+    padding-bottom:  15px !important;
+
+}
+.govuk-header__logotype-crown{
+    display: none!important;
+}
+
+.govuk-header__logotype-text{
+    display: none!important;
+}
+
+
+// title overrides
+.govuk-heading-xl 
+{
+    font-family: "DM Serif Display" !important;
+    font-weight:300!important;
+    display:block!important;
+}
+
+.govuk-heading-xl:after
+{
+    display:block;
+    content : "";
+    width: 15%; 
+    border-bottom:2px solid #7f00ff;
+        margin:0;
+        padding:10px 0px;
+}   
+
+
+
+// buttons and link overrides
+.govuk-button{
+    background-color: #7f00ff!important;
+    color: #f3f2f1!important;
+
+}
+
+.govuk-button:hover {
+    background-color: #3d0872!important;
+}
+.govuk-button:focus {
+    border-color: #7f00ff !important;
+}
+
+a:focus {
+    background-color:  #d0c5da!important;
+    box-shadow: 0 -2px #7f00ff, 0 4px #0b0c0c !important;
+}
+
+// forms overrides
+.govuk-input:focus {
+    outline: 3px solid #c4b6d2!important;
+    border: 2px solid #7f00ff!important;
+} 
+
+
+.govuk-checkboxes__input:focus + .govuk-checkboxes__label:before{
+    box-shadow: 0 0 0 3px #c4b6d2!important;
+    border: 2px solid #7f00ff!important;
+
+} 
+
+
+
+// footer overrides
+.govuk-footer{
+    color: #f3f2f1!important;
+    background-color: #28262e!important;
+} 
+
+.govuk-footer__link{
+    color: #f3f2f1!important;
+
+} 
+
+.govuk-footer__copyright-logo {
+    display:none!important;
+
+}
+
+
+// confirmation overrides 
+.govuk-panel  {
+    background: 28262e !important;
+    padding-top: 0px!important;
+    margin-bottom: 40px!important;
+    background: #ffffff !important;
+    border: 2px solid #7f00ff !important;
+    color: #0b0c0c!important;;
+    box-shadow: 8px 8px 0px #7f00ff!important;;
+}
+
+
+#waves {
+    position: relative;
+    left: 57%;
+    top: 0%;
+}

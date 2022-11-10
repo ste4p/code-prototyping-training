@@ -1,0 +1,127 @@
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="about">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% set newpodInput %}
+{{ govukInput({
+  id: "none",
+  name: "none",
+  classes: "govuk-!-width-one-half",
+  label: {
+    text: "Propose a new PoD session"
+  },
+  value: data["newpodInput"]
+
+}) }}
+{% endset -%}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Ceremonies preferences</h1>
+ 
+      <form class="form" action="check-answers" method="post">
+        
+    
+        {{ govukCheckboxes({
+          name: "pod",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+            legend: {
+              text: "Which PoD session do you wish to attend?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+         
+            {
+              value: data["Service Design"],
+              text: "Service Design",
+              value: " Service Design",
+              checked: checked("pod", "Service Design")
+              
+            },
+            {
+              value: data["UX Research"],
+              text: "UX Research",
+              value: " UX Research",
+              checked: checked("pod", "UX Research")
+            },
+            {
+              value: data["UX & Product Design"],
+              text: "UX & Product Design",
+              value: " UX & Product Design",
+              checked: checked("pod", "UX & Product Design")
+            },
+            {
+              value: data["Brand Experience"],
+              text: "Brand Experience",
+              value: " Brand Experience",
+              checked: checked("pod", "Brand Experience")
+            },
+            {
+              value: data["Content Strategy"],
+              text: "Content Strategy",
+              value: " Content Strategy",
+              checked: checked("pod", "Content Strategy")
+
+            },
+
+            {
+              value: data["Inclusive Design"],
+              text: "Inclusive Design",
+              value: " Inclusive Design",
+              checked: checked("pod", "Inclusive Design")
+
+            },
+
+            {
+              value: " Design Operations",
+              text: "Design Operations",
+              checked: checked("pod", "Design Operations"),
+              hint: {
+                text: "This is paused till February 2023"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Not listed",
+              text: "Not listed",
+              behaviour: "exclusive",
+              conditional: {
+                html: newpodInput
+              }
+            }
+          ]
+        }) }}
+
+
+        
+       
+        {{ govukButton({
+          text: "Check your answers"
+        }) }}
+
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

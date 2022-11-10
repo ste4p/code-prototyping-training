@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Start page 
+      </h1>{{releaseVersion | log }}
+      <p>
+        Welcome to GOV.UK Prototype Kit training. 
+       </p> 
+
+      <h2 class="govuk-heading-m">About this page</h2>
+
+      <p>
+        This page will collect all flows and experiment part of the training. <br><br> I'm gonna learn how to rapidly create HTML prototypes (from simple static pages to complex, data-driven transactions) using GOV.UK toolkit and how to quickly override the default styles.
+      </p>
+
+      <h2 class="govuk-heading-m">My prototypes</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="about">Basic flow</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+

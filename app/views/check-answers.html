@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="preferences">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers </h1>
+
+
+      <h2 class="govuk-heading-m">About you</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Your name"
+            },
+            value: {
+              html: data["fullname"]
+
+            },
+            actions: {
+              items: [
+                {
+                  href: "about",
+                  text: "Change",
+                  visuallyHiddenText: "Your name"
+                }
+              ]
+            }
+          },
+
+
+          {
+            key: {
+              text: "Favourite colleague"
+            },
+            value: {
+              html: data["colleaguename"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "about",
+                  text: "Change",
+                  visuallyHiddenText: "Favourite collegaue"
+                }
+              ]
+            }
+          },
+
+       
+
+
+          {
+            key: {
+              text: "Joined K+C"
+            },
+            value: {
+              html: data["month"]+" "+data["year"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "about",
+                  text: "Change",
+                  visuallyHiddenText: "Joined K+C"
+                }
+              ]
+            }
+          }
+        ]
+      }) }} 
+
+      <h2 class="govuk-heading-m">Ceremonies preferences TEST 1 </h2>
+ 
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                PoD sessions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["pod"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="preferences">
+                  Change
+                  <span class="govuk-visually-hidden">  PoD sessions</span>
+                </a>
+              </dd>
+            </div>
+
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Proposed session
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["newpodInput"] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="preferences">
+                  Change
+                  <span class="govuk-visually-hidden">  PoD sessions</span>
+                </a>
+              </dd>
+            </div>
+
+
+            
+
+           </dl>
+
+
+
+
+<h2 class="govuk-heading-m">Ceremonies preferences TEST 2 </h2>
+
+
+{{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "PoD sessions"
+            },
+            value: {
+              html: data["pod"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "preferences",
+                  text: "Change",
+                  visuallyHiddenText: "PoD sessions"
+                }
+              ]
+            }
+          },
+          
+
+          {
+            key: {
+              text: "Proposed session"
+            },
+            value: {
+              html: data["newpodInput"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "preferences",
+                  text: "Change",
+                  visuallyHiddenText: "Proposed session"
+                }
+              ]
+            }
+          }
+          
+
+
+        ]
+        }) }} 
+  
+
+       
+          
+
+
+
+      <p>By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
