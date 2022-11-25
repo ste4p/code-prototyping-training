@@ -76,96 +76,57 @@
         ]
       }) }} 
 
-      <h2 class="govuk-heading-m">Ceremonies preferences TEST 1 </h2>
- 
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                PoD sessions
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data["pod"] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="preferences">
-                  Change
-                  <span class="govuk-visually-hidden">  PoD sessions</span>
-                </a>
-              </dd>
-            </div>
-
-
-
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Proposed session
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data["newpodInput"] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a href="preferences">
-                  Change
-                  <span class="govuk-visually-hidden">  PoD sessions</span>
-                </a>
-              </dd>
-            </div>
-
-
-            
-
-           </dl>
-
-
-
-
-<h2 class="govuk-heading-m">Ceremonies preferences TEST 2 </h2>
-
-
-{{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "PoD sessions"
-            },
-            value: {
-              html: data["pod"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "preferences",
-                  text: "Change",
-                  visuallyHiddenText: "PoD sessions"
-                }
-              ]
-            }
+  
+<h2 class="govuk-heading-m">Ceremonies preferences </h2>
+{{ 
+  govukSummaryList(
+    {
+      rows: [
+        {
+          key: {
+            text: "PoD sessions"
           },
-          
-
-          {
-            key: {
-              text: "Proposed session"
-            },
-            value: {
-              html: data["newpodInput"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "preferences",
-                  text: "Change",
-                  visuallyHiddenText: "Proposed session"
-                }
-              ]
-            }
+          value: {
+            text: data["pod"]
+          },
+          actions: {
+            items: [
+              {
+                href: "preferences",
+                text: "Change",
+                visuallyHiddenText: "PoD sessions"
+              }
+            ]
           }
-          
+        },
+        
+        
+        {
+          key: {
+            text: "Proposed session"
+          },
+          value: {
+            html: data["newpodInput"]
+          },
+          actions: {
+            items: [
+              {
+                href: "preferences",
+                text: "Change",
+                visuallyHiddenText: "Proposed session"
+              }
+            ]
+          }
+        }
+            
+      ]
+    }
+  ) 
+}} 
 
 
-        ]
-        }) }} 
+
+
   
 
        

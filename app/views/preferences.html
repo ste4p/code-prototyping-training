@@ -8,14 +8,18 @@
 {% block content %}
 
 {% set newpodInput %}
-{{ govukInput({
-  id: "none",
-  name: "none",
+
+{{ 
+  
+  govukInput({
+  id: "newpodInput",
+  name: "newpodInput",
   classes: "govuk-!-width-one-half",
   label: {
     text: "Propose a new PoD session"
   },
-  value: data["newpodInput"]
+  value: ((checked("pod", "Not listed") == "checked") and data["newpodInput"]) or ''
+
 
 }) }}
 {% endset -%}
@@ -45,49 +49,39 @@
           items: [
          
             {
-              value: data["Service Design"],
               text: "Service Design",
-              value: " Service Design",
+              value: "Service Design",
               checked: checked("pod", "Service Design")
-              
             },
             {
-              value: data["UX Research"],
               text: "UX Research",
-              value: " UX Research",
+              value: "UX Research",
               checked: checked("pod", "UX Research")
             },
             {
-              value: data["UX & Product Design"],
               text: "UX & Product Design",
-              value: " UX & Product Design",
+              value: "UX & Product Design",
               checked: checked("pod", "UX & Product Design")
             },
             {
-              value: data["Brand Experience"],
               text: "Brand Experience",
-              value: " Brand Experience",
+              value: "Brand Experience",
               checked: checked("pod", "Brand Experience")
             },
             {
-              value: data["Content Strategy"],
               text: "Content Strategy",
-              value: " Content Strategy",
+              value: "Content Strategy",
               checked: checked("pod", "Content Strategy")
-
             },
-
             {
-              value: data["Inclusive Design"],
               text: "Inclusive Design",
-              value: " Inclusive Design",
+              value: "Inclusive Design",
               checked: checked("pod", "Inclusive Design")
-
             },
 
             {
-              value: " Design Operations",
               text: "Design Operations",
+              value: "Design Operations",
               checked: checked("pod", "Design Operations"),
               hint: {
                 text: "This is paused till February 2023"
@@ -97,8 +91,9 @@
               divider: "or"
             },
             {
-              value: "Not listed",
               text: "Not listed",
+              value: "Not listed",
+              checked: checked("pod", "Not listed"),
               behaviour: "exclusive",
               conditional: {
                 html: newpodInput
